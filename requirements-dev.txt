@@ -1,0 +1,14 @@
+-r requirements.txt
+
+# format & lint
+brunette
+flake8
+interrogate
+isort
+mypy
+types-requests
+vulture
+
+# tests
+pytest
+pytest-cov
