@@ -32,7 +32,7 @@ def normalize_dict(data: dict) -> dict:
         data["clouds"] = data.pop("all")
     if "feels_like" in data:
         data["temp_feels_like"] = data.pop("feels_like")
-    if "emoji" in data:
+    if "icon" in data:
         data["emoji"] = code_to_emoji(data.pop("icon"))
     return data
 

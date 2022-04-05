@@ -4,7 +4,7 @@ from flask import Flask
 from app.api import api
 from app.cache import cache
 from app.config import config
-from app.controllers import ping
+from app.controllers import ping, tools
 from app.database import db
 from app.limiter import limiter
 from app.marshmallow import ma
