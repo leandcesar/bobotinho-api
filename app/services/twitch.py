@@ -20,6 +20,8 @@ ERRORS = (
     "Ocorreu um erro",
     "dados inválidos",
     "Não foi possível",
+    "não encontrado",
+    "not found",
 )
 
 
