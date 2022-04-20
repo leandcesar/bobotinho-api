@@ -88,7 +88,7 @@ class CurrencyController(BaseController):
         return currency_json, HTTPStatus.OK
 
 
-@ns.route("/dicionary")
+@ns.route("/dictionary")
 class DicioController(BaseController):
     @ns.doc(description="Get the dictionary definition of a word")
     @ns.marshal_with(dicio, envelope="data", code=HTTPStatus.OK.value, description="Word definition")

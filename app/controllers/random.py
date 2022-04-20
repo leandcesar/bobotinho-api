@@ -9,7 +9,7 @@ ns = api.namespace("random", description="Random", validate=True)
 rand = ns.model("Random", ResponseSchema().as_model(), strict=True)
 
 
-def random_line_from_text_file(filename: str, path: str = "data") -> str:
+def random_line_from_text_file(filename: str, path: str = "app//data") -> str:
     with open(f"{path}//{filename}", "r", encoding="utf-8") as f:
         lines = f.read().splitlines()
     return random.choice(lines)
@@ -40,7 +40,7 @@ class CatController(BaseController):
     @ns.doc(description="Get some random sad cat")
     @ns.marshal_with(rand, envelope="data", code=HTTPStatus.OK.value, description="Random sad cat")
     def get(self):
-        cat = {"response": "https://i.imgur.com/" +random_line_from_text_file("sadcats.txt")}
+        cat = {"response": "https://i.imgur.com/" + random_line_from_text_file("sadcats.txt")}
         cat_json = ResponseSchema(many=False).dump(cat)
         return cat_json, HTTPStatus.OK
 
