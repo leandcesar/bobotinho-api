@@ -50,7 +50,7 @@ class TwitchService(BaseService):
             if info not in ENDPOINTS:
                 continue
             endpoint = ENDPOINTS[info]
-            if endpoint in ("follow_age", "followed"):
+            if info in ("follow_age", "followed"):
                 user = Validator.username(user)
                 url = f"{self.url}/{endpoint}/{channel}/{user}"
             else:
